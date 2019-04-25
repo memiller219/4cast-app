@@ -1,0 +1,16 @@
+.Title {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(247, 248, 243);
+    font-weight: 100;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.Quote {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(247, 248, 243); 
+    font-weight: 300;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+}
