@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import Layout from "./components/Layout/Layout";
-import Form from './components/Form/Form';
-import Weather from './components/Weather/Weather';
-import './App.css';
+import Form from "./components/Form/Form";
+import Weather from "./components/Weather/Weather";
+import "./App.css";
 
-
-
-
-
-const API_KEY = '4c339c6d24a7454fb3cd0d26c50b2413';
-
-
+const API_KEY = "4c339c6d24a7454fb3cd0d26c50b2413";
 
 class App extends Component {
   state = {
@@ -21,15 +15,15 @@ class App extends Component {
     description: undefined,
     arrow: undefined,
     error: undefined
-  }
+  };
 
-
-
-  getWeather = async (e) => {
+  getWeather = async e => {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const state = e.target.elements.state.value;
-    const api_call = await fetch(`https://api.weatherbit.io/v2.0/current?city=${city},${state}&units=I&key=${API_KEY}`);
+    const api_call = await fetch(
+      `https://api.weatherbit.io/v2.0/current?city=${city},${state}&units=I&key=${API_KEY}`
+    );
     const info = await api_call.json();
 
     if (city && state) {
@@ -49,17 +43,11 @@ class App extends Component {
         humidity: undefined,
         description: undefined,
         icon: undefined,
-        error: 'Please enter a City and State.'
-      })
+        error: "Please enter a City and State."
+      });
     }
-  }
+  };
 
-  /*
-  removeFormHandler = () => {
-    let elem = document.getElementById('form');
-    elem.hidden = true;
-  }
-*/
   render() {
     return (
       <div>
