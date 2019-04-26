@@ -1,0 +1,19 @@
+.Weather {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.CityName {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.Temp {
+    font-size: 4rem;
+    font-weight: 100;
+}
+

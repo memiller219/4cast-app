@@ -1,24 +1,17 @@
 import React from 'react';
+import styles from './Weather.css';
+
 
 
 
 const Weather = props =>
     (
-        <div>
-            {props.city && props.state && <p>Location: {props.city}, {props.state}</p>}
-            {props.temperature && <p>Temperature: {props.temperature} degrees</p>}
-            {props.humidity && <p>Humidity: {props.humidity}</p>}
+        <div className={styles.Weather}>
+            {props.city && props.state && <p><span className={styles.CityName}>{props.city}, {props.state}</span></p>}
+            {props.temperature && <p className={styles.Temp}>{props.temperature}&#176;</p>}
+            {props.humidity && <p>Humidity: {props.humidity}%</p>}
             {props.description && <p>Condition: {props.description}</p>}
         </div>
     )
 
-
-/*
-{props.city && props.state && <p>Location: {props.city},{props.state}</p>}
-{props.temperature && <p>Temperature: {props.temperature}</p>}
-            {props.humidity && <p>Humidity: {props.humidity}</p>}
-            {props.description && <p>Condition: {props.description}</p>}
-            {props.error && <p>{props.error}</p>}
-
-*/
 export default Weather;

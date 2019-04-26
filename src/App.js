@@ -5,7 +5,9 @@ import Weather from './components/Weather/Weather';
 import './App.css';
 
 
-//const API_KEY = '7d75c31996c9b01ac5d74965b2d1c8c1';
+
+
+
 const API_KEY = '4c339c6d24a7454fb3cd0d26c50b2413';
 
 
@@ -17,7 +19,7 @@ class App extends Component {
     state: undefined,
     humidity: undefined,
     description: undefined,
-    icon: undefined,
+    arrow: undefined,
     error: undefined
   }
 
@@ -28,13 +30,8 @@ class App extends Component {
     const city = e.target.elements.city.value;
     const state = e.target.elements.state.value;
     const api_call = await fetch(`https://api.weatherbit.io/v2.0/current?city=${city},${state}&units=I&key=${API_KEY}`);
-
-
-
-
     const info = await api_call.json();
 
-    console.log(info);
     if (city && state) {
       this.setState({
         city: info.data[0].city_name,
@@ -42,7 +39,6 @@ class App extends Component {
         temperature: info.data[0].temp,
         humidity: info.data[0].rh,
         description: info.data[0].weather.description,
-        //icon: info.data[0].weather.code
         error: ""
       });
     } else {
@@ -58,24 +54,25 @@ class App extends Component {
     }
   }
 
+  removeFormHandler = () => {
+    let elem = document.getElementById('form');
+    elem.hidden = true;
+  }
 
   render() {
     return (
-
       <div>
         <Layout />
-        <Form getWeather={this.getWeather} />
+        <Form getWeather={this.getWeather} removeFormHandler={this.removeFormHandler} />
         <Weather
           temperature={this.state.temperature}
           city={this.state.city}
           state={this.state.state}
           humidity={this.state.humidity}
           description={this.state.description}
-          // icon={this.state.icon}
           error={this.state.error}
         />
       </div>
-
     );
   }
 }
