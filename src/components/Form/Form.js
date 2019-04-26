@@ -8,7 +8,7 @@ const Form = (props) => (
     <form onSubmit={props.getWeather} className={styles.FormContainer} id="form">
         <input type="text" name="city" placeholder="City..." />
         <input type="text" name="state" placeholder="State..." />
-        <button onClick={props.removeFormHandler}>
+        <button>
             <FontAwesomeIcon
                 icon={faSearchLocation}
                 className={styles.Icon}

@@ -54,16 +54,17 @@ class App extends Component {
     }
   }
 
+  /*
   removeFormHandler = () => {
     let elem = document.getElementById('form');
     elem.hidden = true;
   }
-
+*/
   render() {
     return (
       <div>
         <Layout />
-        <Form getWeather={this.getWeather} removeFormHandler={this.removeFormHandler} />
+        <Form getWeather={this.getWeather} />
         <Weather
           temperature={this.state.temperature}
           city={this.state.city}

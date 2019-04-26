@@ -1,6 +1,6 @@
 .FormContainer {
     margin: auto;
-    padding-top: 100px;
+    padding-top: 80px;
     color: rgb(247, 68, 78) !important;
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@ input::placeholder:focus {
 }
 
 .Icon {
-    margin-top: 50px;
+    margin-top: 20px;
     border-radius: 50px;
     font-size: 2rem;
     color: rgb(247, 68, 78);
